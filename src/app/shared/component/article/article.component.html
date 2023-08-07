@@ -1,0 +1,9 @@
+<div class="article">
+  <div *ngFor="let article of articles" class="article-item">
+    <img [src]="article.imageUrl" alt="Article Image" class="article-image">
+    <div class="article-details">
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.date | date:'medium' }}</p>
+    </div>
+  </div>
+</div>
