@@ -17,6 +17,7 @@ export class ArticleComponent {
       date: new Date(),
       imageUrl: 'assets/image/team.jpg'
     }
-    // Add more articles here
+
   ];
+  buttonTitle: string = "Lihat Article"
 }
