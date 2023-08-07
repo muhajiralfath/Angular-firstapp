@@ -2,7 +2,8 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: 'hello-world',
-  template: '<h1>Hello Pascal 12!!!</h1>'
+  templateUrl: './hello.component.html',
+  styleUrls: ['hello.component.css']
 })
 
 export class HelloComponent { }
