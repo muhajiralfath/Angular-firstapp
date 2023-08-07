@@ -1,0 +1,86 @@
+{
+  "name": "first-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "generators": {},
+  "sourceRoot": "apps/first-app/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/first-app",
+        "index": "apps/first-app/src/index.html",
+        "main": "apps/first-app/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/first-app/tsconfig.app.json",
+        "assets": [
+          "apps/first-app/src/favicon.ico",
+          "apps/first-app/src/assets"
+        ],
+        "styles": [
+          "bootstrap/scss/bootstrap.scss",
+          "apps/first-app/src/styles.css"
+        ],
+        "scripts": ["bootstrap/dist/js/bootstrap.bundle.min.js"]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "first-app:build:production"
+        },
+        "development": {
+          "browserTarget": "first-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "first-app:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "polyfills": ["zone.js", "zone.js/testing"],
+        "tsConfig": "apps/first-app/tsconfig.spec.json",
+        "assets": [
+          "apps/first-app/src/favicon.ico",
+          "apps/first-app/src/assets"
+        ],
+        "styles": ["apps/first-app/src/styles.css"],
+        "scripts": []
+      }
+    }
+  }
+}
