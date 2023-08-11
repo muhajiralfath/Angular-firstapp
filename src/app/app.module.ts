@@ -14,6 +14,7 @@ import { HeaderComponent } from './shared/component/header/header.component';
 import { HomeComponent } from './component/home/home.component';
 import { GameComponent } from './component/game/game.component';
 import { ChildComponent } from './component/child/child.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ChildComponent } from './component/child/child.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
