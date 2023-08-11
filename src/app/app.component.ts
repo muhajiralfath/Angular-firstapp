@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'title from parent';
-  name: string = "data parent awal"
 }
