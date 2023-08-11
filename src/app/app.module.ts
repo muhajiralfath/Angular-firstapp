@@ -12,6 +12,8 @@ import { FooterComponent } from './shared/component/footer/footer.component';
 import { SidebarComponent } from './shared/component/sidebar/sidebar.component';
 import { HeaderComponent } from './shared/component/header/header.component';
 import { HomeComponent } from './component/home/home.component';
+import { GameComponent } from './component/game/game.component';
+import { ChildComponent } from './component/child/child.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HomeComponent } from './component/home/home.component';
     FooterComponent,
     SidebarComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    GameComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
