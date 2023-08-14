@@ -12,6 +12,8 @@ import {
 } from './shared/utils/forbidden-name/forbidden-name.directive';
 import { ExponentPipe } from './shared/pipes/exponent.pipe';
 import { AgePipe } from './shared/pipes/age.pipe';
+import { TodoListComponent } from './todo/todo-list/todo-list.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { AgePipe } from './shared/pipes/age.pipe';
     ForbiddenValidatorDirective,
     ExponentPipe,
     AgePipe,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
