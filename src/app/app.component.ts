@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'title from parent';
+
+  birthDate: Date = new Date("1999-04-07")
 }
