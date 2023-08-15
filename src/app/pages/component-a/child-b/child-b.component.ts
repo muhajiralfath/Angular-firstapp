@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-child-b',
@@ -7,7 +7,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./child-b.component.css']
 })
 export class ChildBComponent {
-  constructor(private readonly route: ActivatedRoute) {
+  constructor(private readonly route: ActivatedRoute, private readonly router: Router) {
   }
   paramsIid: string = ""
   ngOnInit(): void{
@@ -16,4 +16,10 @@ export class ChildBComponent {
       this.paramsIid = params['id']
     })
   }
+
+  moveToChildA(): void{
+    this.router.navigateByUrl("/component-a/child-a")
+  }
+
+
 }
