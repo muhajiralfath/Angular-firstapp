@@ -13,6 +13,9 @@ import {
 import { ExponentPipe } from './shared/pipes/exponent.pipe';
 import { AgePipe } from './shared/pipes/age.pipe';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
+import { ComponentBComponent } from './component-b/component-b.component';
+import { ComponentNotfoundComponent } from './shared/components/component-notfound/component-notfound.component';
+
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import { TodoListComponent } from './todo/todo-list/todo-list.component';
     ForbiddenValidatorDirective,
     ExponentPipe,
     AgePipe,
-    TodoListComponent
+    TodoListComponent,
+    ComponentBComponent,
+    ComponentNotfoundComponent,
   ],
   imports: [
     BrowserModule,
