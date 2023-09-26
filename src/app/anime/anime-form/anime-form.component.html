@@ -1,0 +1,52 @@
+<div class="container d-flex align-items-center justify-content-center mt-5 ">
+  <div class="card w-50">
+    <div class="card-body">
+      <div class="card-title">
+          <form [formGroup]="animeForm" (ngSubmit) =" submidData(animeForm.value)">
+            <div class="form-group">
+              <label for="id">id</label>
+              <input type="text" id="id" class="form-control" placeholder="Enter Id" formControlName="id">
+            </div>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Enter name" formControlName="name" appForbiddenName="bob">
+              <div *ngIf="form('name').invalid && form('name').dirty || form('name').touched">
+                <div class="alert alert-danger" *ngIf="form('name').errors?.['required']">
+                  This Field is Required
+                </div>
+                <div class="alert alert-warning" *ngIf="form('name').errors?.['pattern']">
+                  This Name must be contains number
+                </div>
+                <div class="alert alert-info" *ngIf="form('name').errors?.['forbiddenName']">
+                  This Name must be not contain bob
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-1">
+              <label for="cover">Cover</label>
+              <input type="text" id="cover" class="form-control" placeholder="Enter cover" formControlName="cover">
+              <div *ngIf="form('cover').invalid && form('cover').dirty || form('cover').touched ">
+                <div class="alert alert-danger" *ngIf="form('cover').errors?.['required']">
+                  this Field is required
+                </div>
+                <div class="alert alert-warning" *ngIf="form('cover').errors?.['minlength']">
+                  char less than 10 char
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="animeForm.invalid">Submit</button>
+          </form>
+          <div class="row ">
+            <div class="card d-flex justify-content-center" *ngFor="let anime of animes; let i = index">
+              <div class="card-body">
+                <h2>{{anime.name}}</h2>
+                <div class="">
+                  <img src="{{anime.cover}}" alt="" width="300px">
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

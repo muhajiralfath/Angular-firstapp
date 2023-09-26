@@ -1,0 +1,62 @@
+<div class="card text-center w-50 m-auto mb-3">
+  <div class="card-body">
+    <div class="input-group mb-3 d-flex flex-column">
+      <input [(ngModel)]="taskTitle" type="text" class="form-control w-auto mb-1" placeholder="Tittle"
+             aria-label="Recipient's username"
+             aria-describedby="button-addon2">
+      <input [(ngModel)]="taskDesc" type="text" class="form-control w-auto" placeholder="Description"
+             aria-label="Recipient's username"
+             aria-describedby="button-addon2">
+    </div>
+    <button (click)="addTodo()" class="btn btn-primary">Add Todo</button>
+  </div>
+</div>
+
+<div class="w-75 m-auto">
+  <table class="table">
+    <thead class="table-dark">
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Handle</th>
+    </tr>
+    </thead>
+
+    <tbody *ngFor="let li of todos; let i = index">
+    <tr>
+      <th scope="row">{{[i + 1]}}</th>
+      <td><span>{{li.title}}</span></td>
+      <td><p>{{li.description}}</p></td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteTodo(i)">Delete</button>
+        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="updateTrigger(li.title, li.description, i)">Update</button>
+      </td>
+    </tr>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group mb-3 d-flex flex-column">
+              <input [(ngModel)]="updateTitle" type="text" class="form-control w-auto mb-1" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <input [(ngModel)]="updateDesc" type="text" class="form-control w-auto" aria-label="Recipient's username" aria-describedby="button-addon2">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="update()" data-bs-dismiss="modal">Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </tbody>
+
+  </table>
+</div>

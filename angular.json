@@ -30,6 +30,7 @@
             ],
             "scripts": [
               "bootstrap/dist/js/bootstrap.bundle.js"
+              "bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
@@ -99,6 +100,6 @@
     }
   },
   "cli": {
-    "analytics": "73ed91b1-2038-4fe9-92c4-8191732f4834"
+    "analytics": "b18193b0-f189-443a-8063-170191a5632f"
   }
 }

@@ -3,30 +3,38 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello/hello.component';
-import { LoginComponent } from './login/login.component';
-import { FormComponent } from './form/form.component';
-import { HeaderComponent } from './shared/component/header/header.component';
-import { SidebarComponent } from './shared/component/sidebar/sidebar.component';
-import { FooterComponent } from './shared/component/footer/footer.component';
-import { BodyComponent } from './shared/component/body/body.component';
-import { ArticleComponent } from './shared/component/article/article.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { AnimeFormComponent } from './anime/anime-form/anime-form.component';
+import { AnimeListComponent } from './anime/anime-list/anime-list.component';
+
+import {
+  ForbiddenValidatorDirective
+} from './shared/utils/forbidden-name/forbidden-name.directive';
+import { ExponentPipe } from './shared/pipes/exponent.pipe';
+import { AgePipe } from './shared/pipes/age.pipe';
+import { TodoListComponent } from './todo/todo-list/todo-list.component';
+import { ComponentBComponent } from './component-b/component-b.component';
+import { ComponentNotfoundComponent } from './shared/components/component-notfound/component-notfound.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloComponent,
-    LoginComponent,
-    FormComponent,
-    HeaderComponent,
-    SidebarComponent,
-    FooterComponent,
-    BodyComponent,
-    ArticleComponent
+    AnimeFormComponent,
+    AnimeListComponent,
+    ForbiddenValidatorDirective,
+    ExponentPipe,
+    AgePipe,
+    TodoListComponent,
+    ComponentBComponent,
+    ComponentNotfoundComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
